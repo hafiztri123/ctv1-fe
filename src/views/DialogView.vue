@@ -1,13 +1,27 @@
 <script setup lang="ts">
 import Button from '@/components/commons/Button.vue';
+import Dialog from '@/components/commons/Dialog.vue';
+import { shallowRef } from 'vue';
+
+const showDialog = shallowRef<boolean>(false)
+const showDialogWithoutButton = shallowRef<boolean>(false)
 
 </script>
 
 <template>
-  <div class="flex gap-3">
-    <Button label="Normal 1"/>
-    <Button label="Disabled 1" disabled/>
-    <Button label="Outlined 1" outlined/>
+  <div class="flex flex-col gap-3">
+    <Button @click="showDialog = true"  label="Show dialog"/>
+    <Button @click="showDialogWithoutButton = true" label="Show dialog without button"/>
+
+    <Dialog v-model:visible="showDialog" header-icon="checklist" header="Some header" body="Some body" close-on-backdrop>
+      <template #button>
+        <Button label="Login"/>
+
+      </template>
+    </Dialog>
+
+    <Dialog v-model:visible="showDialogWithoutButton" header-icon="checklist" header="Some header" body="Some body" close-on-backdrop/>
+
   </div>
 
 
