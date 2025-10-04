@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<{
 
 const buttonClass = computed<HTMLAttributes['class']>(() => {
   return {
-    'px-6 py-2.5 rounded-[10px] flex items-center justify-center select-none group transition-colors' : true,
+    'px-6 py-2.5 rounded-[10px] flex items-center justify-center select-none group transition-colors w-full' : true,
     'border-0' : !props.outlined,
     'bg-primary cursor-pointer' : !props.disabled  && !props.outlined,
     'bg-disabled cursor-not-allowed' : props.disabled,
