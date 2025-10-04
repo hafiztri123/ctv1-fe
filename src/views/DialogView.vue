@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import Button from '@/components/commons/Button.vue';
-import Dialog from '@/components/commons/Dialog.vue';
+import { Button, Dialog } from '@/components/commons';
 import { shallowRef } from 'vue';
 
 const showDialog = shallowRef<boolean>(false)
@@ -16,14 +15,8 @@ const showDialogWithoutButton = shallowRef<boolean>(false)
     <Dialog v-model:visible="showDialog" header-icon="checklist" header="Some header" body="Some body" close-on-backdrop>
       <template #button>
         <Button label="Login"/>
-
       </template>
     </Dialog>
-
     <Dialog v-model:visible="showDialogWithoutButton" header-icon="checklist" header="Some header" body="Some body" close-on-backdrop/>
-
   </div>
-
-
-
 </template>
