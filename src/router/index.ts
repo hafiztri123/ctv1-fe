@@ -5,6 +5,7 @@ const routes: Readonly<RouteRecordRaw[]> = [
   {
     path: '/component',
     component: (): Promise<Component> => import('@/layout/ComponentLayout.vue'),
+    redirect: '/component/button',
     children: [
       {
         path: 'button',
@@ -15,7 +16,13 @@ const routes: Readonly<RouteRecordRaw[]> = [
         path: 'dialog',
         name: 'dialog',
         component: (): Promise<Component> => import('@/views/DialogView.vue')
+      },
+      {
+        path: 'card',
+        name: 'card',
+        component: (): Promise<Component> => import('@/views/CardView.vue')
       }
+
 
     ]
   }
