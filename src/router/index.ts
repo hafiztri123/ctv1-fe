@@ -10,6 +10,11 @@ const routes: Readonly<RouteRecordRaw[]> = [
         path: 'button',
         name: 'button',
         component: (): Promise<Component> => import('@/views/ButtonView.vue')
+      },
+      {
+        path: 'dialog',
+        name: 'dialog',
+        component: (): Promise<Component> => import('@/views/DialogView.vue')
       }
 
     ]
